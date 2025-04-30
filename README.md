@@ -1,33 +1,46 @@
-🧠 Face Frenzy
-Face Frenzy is a fast-paced interactive face detection game built using Zynq P2 boards for hardware control and Python for software logic. Designed for real-time engagement, the game challenges players to match a randomly generated face count using actual people in front of a USB camera.
+# 🧠 Face Frenzy
 
-🎮 Game Overview
-The system displays a target number of faces the players must match.
+**Face Frenzy** is a fast-paced, interactive face detection game that blends embedded hardware with computer vision. Built using **Zynq P2 boards** for hardware interfacing and **Python** for the software layer, this project challenges users to match a given number of faces in front of a USB camera — or lose a life!
 
-A countdown timer begins.
+---
 
-After the countdown, a frame is captured using a USB camera.
+## 🎮 How It Works
 
-The system uses face detection algorithms to count the number of faces.
+1. A **random target number** of faces is displayed on screen.
+2. A **countdown** begins to give players time to gather the correct number of people.
+3. After the countdown, a **frame is captured** using a USB camera.
+4. The system uses **OpenCV** to detect how many faces are present.
+5. If the detected face count **matches** the target, players move on.
+6. If it **does not match**, players **lose one life**.
+7. Players have a total of **3 lives** — lose them all and it's game over!
 
-If the detected face count matches the target, the player continues.
+---
 
-If it doesn’t match, the player loses one life.
+## 🧰 Tech Stack
 
-Players have a total of 3 lives—game over if they lose them all!
+- 🔌 **Hardware**: Zynq P2 Board  
+- 🐍 **Software**: Python 3  
+- 📸 **Camera**: USB webcam  
+- 🧠 **Computer Vision**: OpenCV (Haar Cascades or DNN)
 
-🧰 Tech Stack
-Hardware: Zynq P2 board for system control and interfacing
+---
 
-Software: Python (OpenCV for face detection)
+## 🚀 Features
 
-Camera: Standard USB camera
+- Real-time face detection
+- Seamless hardware-software integration
+- Randomized target face count
+- Countdown timer for added pressure
+- Simple 3-life game mechanic
+- Modular and extensible codebase
 
-🚀 Features
-Real-time face detection using OpenCV
+---
 
-Hardware/software integration with Zynq P2
+## 🛠️ Setup Instructions
 
-Dynamic target generation and countdown
+> _Coming Soon — or customize based on your actual implementation._
 
-Simple 3-life system to track player progress
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/face-frenzy.git
+   cd face-frenzy
