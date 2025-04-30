@@ -2,8 +2,7 @@ import cv2
 
 class CameraManager:
     def __init__(self):
-        self.cap = cv2.VideoCapture(0)
-
+        self.cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
         if not self.cap.isOpened():
             print("Cannot open camera")
             exit()
