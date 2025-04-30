@@ -1,15 +1,27 @@
 from FaceDetector import FaceDetector
 from CameraManager import PCCameraManager
-import time
+from StateMachine import GameController, CountdownTimer, OutputManager, GameState
+import cv2
 
-cameraManager = PCCameraManager()
-detector = FaceDetector()
+def main():
+    face_detector = FaceDetector()
+    camera = PCCameraManager()
+    countdown = CountdownTimer()
+    output = OutputManager()
+    controller = GameController(face_detector, camera, countdown, output)
 
-try:
-    for _ in range(10):
-        frame = cameraManager.get_frame()
-        count = detector.detect_faces(frame)
-        print(f"Detected {count} face(s)")
-        time.sleep(1)
-finally:
-    cameraManager.release()
+    controller.start_game()
+
+    while True:
+        controller.update()
+        if controller.state == GameState.IDLE:
+            break
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            print("Quit signal received.")
+            break
+
+    camera.release()
+    cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    main()
