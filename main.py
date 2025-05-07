@@ -5,6 +5,8 @@ from CameraManager import CameraManager
 from DisplayManager import DisplayManager
 from GameController import GameController
 from IOHandler import IOHandler
+from GameStateExporter import GameStateExporter
+from WebServer import WebServer
 from pynq.overlays.base import BaseOverlay
 
 print("Face Frenzy Game Starting...")
@@ -20,6 +22,11 @@ io = IOHandler(base)
 
 # Create game controller
 game = GameController(camera=camera, detector=detector, display=display, io=io, max_players=4)
+
+# Start web monitoring server
+exporter = GameStateExporter(game)
+web_server = WebServer(exporter)
+web_server.start()
 
 print("Components initialized. Running game loop...")
 
