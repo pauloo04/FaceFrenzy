@@ -40,4 +40,14 @@ This repository contains homework assignment case-based learning exercises for t
 - Modular and extensible codebase
 
 ---
+
+## Startup
+In order to run the game, enter the pynq environment by running in ssh:
+```
+source /etc/profile.d/pynq_venv.sh
+source /etc/profile.d/xrt_setup.sh
+```
+then start the main.py as you normally would. 
+
+
 > This repository is not affiliated with SDU or Krzysztof Sierszecki
