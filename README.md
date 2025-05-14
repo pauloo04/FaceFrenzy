@@ -2,6 +2,11 @@
 
 **Face Frenzy** is a fast-paced, interactive face detection game that blends embedded hardware with computer vision. Built using **Zynq P2 boards** for hardware interfacing and **Python** for the software layer, this project challenges users to match a given number of faces in front of a USB camera — or lose a life!
 
+This repository contains homework assignment case-based learning exercises for the Designing Software Systems with Embedded Elements (F25) course led by **Associate Professor Krzysztof Sierszecki** at the University of Southern Denmark (SDU).
+
+**Course Instructor**: [Krzysztof Sierszecki](https://portal.findresearcher.sdu.dk/en/persons/krzys)  
+**Institution**: University of Southern Denmark (SDU)
+
 ---
 
 ## 🎮 How It Works
@@ -27,7 +32,7 @@
 
 ## 🚀 Features
 
-- Real-time face detection
+- Real-time face detection - not really realtime. It was planned using the FPGA, but never implemented. Analysis frames realtime uses too much resources without the FPGA offloading, therefore not viable. There is a FPGA possibility - https://github.com/sefaburakokcu/finn-quantized-yolo in case someone would like to install old software on the board for Python 3.8. Unfortunately for this project, however, that is way out of scope. 
 - Seamless hardware-software integration
 - Randomized target face count
 - Countdown timer for added pressure
@@ -35,12 +40,4 @@
 - Modular and extensible codebase
 
 ---
-
-## 🛠️ Setup Instructions
-
-> _Coming Soon — or customize based on your actual implementation._
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/face-frenzy.git
-   cd face-frenzy
+> This repository is not affiliated with SDU or Krzysztof Sierszecki
